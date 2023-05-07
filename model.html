@@ -1,0 +1,53 @@
+{% load static %}
+{% block body %}
+{% include 'navigation.html' %}
+<head>
+	<title>Home page</title>
+	
+		<style>
+.page th {
+  
+    background-color: #add8e6;
+    color: white;
+}
+.box{
+
+align-items:center;
+text-align:center
+}
+.box2 {
+
+
+    align-items:center;
+    padding:20px;
+
+	text-align:center
+}
+
+</style>
+</head>
+<body>
+<div class="box">
+	<h1>Upload your resume</h1>
+
+	<form method="POST" action="{% url 'file_Parser' %}" enctype="multipart/form-data">
+		{% csrf_token %}
+	
+	<input type="file" name="userfile">
+	<input type="submit">
+	</form>
+
+</div>
+<div class="box2">
+	<div class=page>
+ 		<h1>Suggested jobs</h1>
+  		{% for table in tables %}
+    	
+    	{{ table|safe }}
+  		{% endfor %}
+	</div>
+	</div>
+</body>
+
+{% include 'footer.html' %}
+{% endblock %}

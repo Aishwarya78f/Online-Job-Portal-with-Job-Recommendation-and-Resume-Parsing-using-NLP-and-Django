@@ -1,0 +1,65 @@
+{% load static %}
+{% block body %}
+{% include 'navigation.html' %}
+	<style>
+.page th {
+  
+    background-color: #add8e6;
+    color: black;
+    align-items:center;
+    padding:5px;
+    margin:5px;
+text-align:center
+}
+.page tr {
+
+    align-items:center;
+    padding:2px 4px 2px 4px;
+    margin:2px 4px 2px 4px;
+text-align:center
+}
+.box2 {
+
+
+    align-items:center;
+    padding:20px;
+    margin-left:30%;
+	text-align:center
+}
+.box{
+
+align-items:center;
+text-align:center
+}
+
+</style>
+	
+
+<body>
+<div class="box">
+	<h1>Enter skills</h1>
+
+	<form method="POST" action="{% url 'submit_Parser' %}">
+		{% csrf_token %}
+	
+	<input type="text" name="list_jobs">
+	<input type="submit">
+	</form>
+
+<h1>Suggested jobs</h1>
+
+<div class="box2">
+	<div class=page>
+
+  		{% for table in tables %}
+    	
+    	{{ table|safe }}
+  		{% endfor %}
+	</div>
+</div>
+	</div>
+</body>
+
+{% include 'footer.html' %}
+{% endblock %}
+

@@ -1,0 +1,82 @@
+{% load static %}
+{% block body %}
+{% include 'navigation.html' %}
+<style>
+    .container{
+        max-width: 90%;
+    }
+    .content{
+        text-align:center;
+        position : absolute;
+        bottom:0;
+        background:rgba(0,0,0,0.5);
+        color:white;
+        height: 30px;
+        width: 91%;
+
+    }
+</style>
+<div class="container-fluid" style ="margin-top:1%">
+    <img src="{% static 'images/job_search_portals.png' %}" style ="height: 450px;width:100%">
+
+</div>
+<div class="container" style="background-color: black;height: 570px;margin-top: 2%">
+<h1 class="text-center text-white">----------|Our Placed Students|------------</h1>
+<div class="row mt-3">
+    <div class="col-md-3">
+        <img src="{% static  'images/f1.jpg' %}" style="width:100%;margin-top: 5%;height: 200px;border-radius: 50%">
+        <div class="content" style="height: 30px;width: 91%">
+            <p>Facebook</p>
+        </div>
+    </div>
+        <div class="col-md-3">
+            <img src="{% static  'images/f2.jpg' %}" style="width:100%;margin-top: 5%;height: 200px;border-radius: 50%">
+            <div class="content" style="height: 30px;width: 91%">
+                <p>Meta</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <img src="{% static  'images/f3.jpg' %}" style="width:100%;margin-top: 5%;height: 200px;border-radius: 50%">
+            <div class="content" style="height: 30px;width: 91%">
+                <p>Amazon</p>
+                </div>
+        </div>
+        <div class="col-md-3">
+            <img src="{% static  'images/f4.jpg' %}" style="width:100%;margin-top: 5%;height: 200px;border-radius: 50%">
+            <div class="content" style="height: 30px;width: 91%">
+                <p>Infosys</p>
+                </div>
+        </div>
+        
+        
+        <div class="col-md-3">
+            <img src="{% static  'images/f5.jpg' %}" style="width:100%;margin-top: 5%;height: 200px;border-radius: 50%">
+            <div class="content" style="height: 30px;width: 91%">
+                <p>Delloite</p>
+            </div>
+        </div>
+            <div class="col-md-3">
+                <img src="{% static  'images/f6.jpg' %}" style="width:100%;margin-top: 5%;height: 200px;border-radius: 50%">
+                <div class="content" style="height: 30px;width: 91%">
+                    <p>Netflix</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <img src="{% static  'images/f7.png' %}" style="width:100%;margin-top: 5%;height: 200px;border-radius: 50%">
+                <div class="content" style="height: 30px;width: 91%">
+                    <p>Microsoft</p>
+                    </div>
+            </div>
+            <div class="col-md-3">
+                <img src="{% static  'images/f8.png' %}" style="width:100%;margin-top: 5%;height: 200px;border-radius: 50%">
+                <div class="content" style="height: 30px;width: 91%">
+                    <p>TCS</p>
+                    </div>
+            </div>
+            
+
+</div>
+
+{% include 'footer.html' %}
+
+{% endblock %}

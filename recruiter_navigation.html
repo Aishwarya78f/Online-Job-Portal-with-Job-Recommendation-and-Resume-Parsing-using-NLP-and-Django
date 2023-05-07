@@ -1,0 +1,73 @@
+<html>
+    <head>
+        {% load static %}
+        <title>  JOB PORTAL  </title>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .nav-link{
+        color : white !important;
+        margin-right: 4px
+    }
+    .nav-link:hover{
+        color : yellow !important;
+        font-weight: bold;
+        background-color: red;
+        border-radius:10px;
+    }
+  </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="{% static 'images/job1.jpg' %} " style="width : 180px ;height:150px">
+                </div>
+                <div class="col-sm-6 mt-5 text-center">
+                    <span style=" font-weight: bold;font-size: 30px ">
+                    <span style="color: red">Online Job</span>
+                    <span style="color: green">Portal System</span>
+                </span>
+                </div>
+                <div class="col-sm-3 mt-5" style="padding-left: 10%">
+                    <span style="font-weight: bold;font-size: 30px">
+                        <span><i class="fa fa-twitter pl-2"></i></span>
+                        <span><i class="fa fa-linkedin pl-1"></i></span>
+                        <span><i class="fa fa-instagram pl-1"></i></span>
+                        <span><i class="fa fa-telegram pl-1"></i></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-sm" style ="background-color: maroon">
+            <a class ="navbar-brand text-white pl-5 font-weight-bold" style="font-family: 'Monotype Corsiva';font-size:30px;">Job Portal</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'recruiter_home' %}" style="margin-left: 380px"><i class="fa fa-home mr-1"></i>Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'add_job' %}"><i class="fa fa-plus-circle mr-1"></i>Add Job</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'job_list' %}"><i class="fa fa-list-ol mr-1"></i>Job List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'applied_candidatelist' %}"><i class="fa fa-list-ol mr-1"></i>Candidates Applied</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'change_passwordrecruiter' %}"><i class="fa fa-user-circle mr-1"></i>Change Password</a>
+             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'Logout' %}"><i class="fa fa-sign-out mr-1"></i>Logout</a>
+            </li>
+        </ul>
+        <a class ="navbar-brand text-white pl-5 font-weight-bold" style="font-family: 'Monotype Corsiva';font-size:20px">{{request.user.first_name}} {{request.user.last_name}}</a>
+        </nav>
+    </body>
+</html>

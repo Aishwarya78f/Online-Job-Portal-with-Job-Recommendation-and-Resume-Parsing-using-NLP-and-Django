@@ -1,0 +1,39 @@
+{% load static %}
+{% block body %}
+{% include 'recruiter_navigation.html' %}
+<style>
+    tr{text-align: center}
+</style>
+
+<marquee style="font-family:'Monotype Corsiva';font-size : 25px ;color: darkcyan;background-color: black;font-weight: bold;margin-top: 1%">
+    Manage Job Details
+    </marquee>
+    <hr>
+    <div class="container">
+<table class="table table-hover container" id="example">
+    <thead>
+        <tr style = "background-color : #000080 ; color : white">
+            <th>S.No.</th>
+            <th>Job Title</th>
+            <th>Creation Date</th>
+            <th>Status</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for i in job %}
+        <tr style = "background-color : #DEB887">
+            <td>{{forloop.counter}}</td>
+            <td>{{i.title}} </td>
+            <td>{{i.creationdate}} </td>
+            <td><a href="{% url 'edit_jobdetail' i.id %}" class="btn btn-success btn-sm">Edit</a>
+            | <a href="{% url 'change_status' i.id %}" class="btn btn-danger btn-sm">delete</a>
+            </td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}
